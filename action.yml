@@ -1,0 +1,6 @@
+name: 'Pull Request Validator'
+description: 'Verify that the pull request and configuration were successfully created.'
+author: 'moseoh'
+runs:
+  using: 'node20'
+  main: 'lib/index.js'
