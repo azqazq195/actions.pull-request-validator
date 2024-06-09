@@ -1,0 +1,12 @@
+name: Pull Request Validator
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Request Validator
+        uses: azqazq195/actions.pull-request-validator@master
+
