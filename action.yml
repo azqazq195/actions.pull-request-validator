@@ -4,3 +4,6 @@ author: 'moseoh'
 runs:
   using: 'node20'
   main: 'lib/index.js'
+branding:
+  icon: 'git-pull-request'
+  color: 'blue'
