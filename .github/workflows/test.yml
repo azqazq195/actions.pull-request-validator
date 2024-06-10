@@ -7,11 +7,6 @@ on:
       - reopened
       - synchronize
 
-permissions:
-  contents: write
-  pull-requests: read
-  issues: write
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -19,5 +14,5 @@ jobs:
       - name: Pull Request Validator
         uses: azqazq195/actions.pull-request-validator@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
