@@ -2,11 +2,20 @@
   "name": "pull-request-validator",
   "version": "1.0.0",
   "main": "lib/index.js",
-  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/index.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azqazq195/actions.pull-request-validator.git"
+  },
+  "keywords": [
+    "actions",
+    "pull-request"
+  ],
+  "author": "moseoh",
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0"

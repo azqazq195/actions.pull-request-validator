@@ -1,0 +1,32 @@
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Git related
+.git/
+.gitignore
+
+# IDE related
+.idea/
+.vscode/
+
+# OS related
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Build files
+dist/
+build/
+coverage/
+
+# Test files
+coverage/
+*.lcov
+*.lcov.info
+.nyc_output/
+jest-html-reporters-*.html
