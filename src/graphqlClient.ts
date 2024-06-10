@@ -5,7 +5,7 @@ export async function getGraphqlClient() {
     const inputs = await context.getInputs();
     return graphql.defaults({
         headers: {
-            Authorization: `bearer ${inputs.token}`
+            authorization: `token ${inputs.token}`
         }
     });
 }
