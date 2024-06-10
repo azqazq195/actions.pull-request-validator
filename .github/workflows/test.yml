@@ -23,4 +23,7 @@ jobs:
         uses: azqazq195/actions.pull-request-validator@action
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          pull-request-title-regex: "^(feat|refactor|bug|hotfix):.*$"
+          branch-name-regex: "^(feat|refactor|bug|hotfix)-.*$"
+          commit-message-regex: "^(feat|refactor|fix|chore|remove|rename|test):.*$"
 

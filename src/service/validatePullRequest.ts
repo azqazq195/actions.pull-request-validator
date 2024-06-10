@@ -13,12 +13,13 @@ export async function validatePullRequest(inputs: Inputs) {
 async function checkPullRequestTitle(inputs: Inputs) {
     if (!inputs.pullRequestTitleRegex) {
         core.info('Skip check pull request title.')
+        return
     }
 
     const prTitle = github.context.payload.pull_request?.title;
     if (!prTitle) {
         core.setFailed('Pull request title 을 찾을 수 없습니다.');
-        return;
+        return
     }
 
     const regex = new RegExp(inputs.pullRequestTitleRegex!!);
@@ -33,12 +34,13 @@ async function checkPullRequestTitle(inputs: Inputs) {
 async function checkBranchName(inputs: Inputs) {
     if (!inputs.branchNameRegex) {
         core.info('Skip check branch name.')
+        return
     }
 
     const branchName = github.context.payload.pull_request?.head.ref;
     if (!branchName) {
         core.setFailed('Branch name 을 찾을 수 없습니다.');
-        return;
+        return
     }
 
     const regex = new RegExp(inputs.branchNameRegex!!);
@@ -53,6 +55,7 @@ async function checkBranchName(inputs: Inputs) {
 async function checkCommitMessage(inputs: Inputs) {
     if (!inputs.commitMessageRegex) {
         core.info('Skip check commit message.')
+        return
     }
 
     const commits = await github.getOctokit(inputs.token).rest.pulls.listCommits({
