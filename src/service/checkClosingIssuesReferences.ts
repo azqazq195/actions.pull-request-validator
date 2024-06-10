@@ -34,7 +34,6 @@ const linkedBranchesQuery = `
 
 export async function checkClosingIssuesReferences(inputs: Inputs) {
     core.startGroup('CheckClosingIssuesReferences');
-    core.info('PR에 연결된 issue 검색 시작')
 
     const graphqlWithAuth = await getGraphqlClient()
     const response: GetClosingIssuesReferences = await graphqlWithAuth(linkedBranchesQuery, {
@@ -47,8 +46,9 @@ export async function checkClosingIssuesReferences(inputs: Inputs) {
 
     if (closingIssues.length <= 0) {
         core.setFailed('연결된 issue 가 없음.')
+    } else {
+        core.info('PR에 issue 연결 ✅')
     }
 
-    core.info('PR에 연결된 issue 검색 종료')
     core.endGroup()
 }
