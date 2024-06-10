@@ -69,13 +69,17 @@ async function checkCommitMessage(inputs: Inputs) {
 
     commits.data.forEach(commit => {
         if (!regex.test(commit.commit.message)) {
-            invalidMessages.push(commit.commit.message);
+            invalidMessages.push(`Commit SHA: ${commit.sha} - Message: ${commit.commit.message}`);
         }
     });
 
     if (invalidMessages.length > 0) {
-        core.setFailed(`아래 commit message 들이 패턴 '${inputs.commitMessageRegex}'에 맞지 않습니다.\n - ${invalidMessages.join('\n')}`);
-        return
+        const message = [
+            `아래 commit message 들이 패턴 '${inputs.commitMessageRegex}'에 맞지 않습니다:`,
+            ...invalidMessages.map(msg => `- ${msg}`)
+        ].join('\n');
+        core.setFailed(message);
+        return;
     }
 
     core.info(`Commit message 패턴 검사 ✅`);
