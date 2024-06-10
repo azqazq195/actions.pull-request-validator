@@ -1,6 +1,10 @@
 name: 'Pull Request Validator'
 description: 'Verify that the pull request and configuration were successfully created.'
 author: 'moseoh'
+inputs:
+  token:
+    description: 'GitHub token to authenticate requests.'
+    required: true
 runs:
   using: 'node20'
   main: 'lib/index.js'
