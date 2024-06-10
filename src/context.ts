@@ -6,9 +6,9 @@ export interface Inputs {
     owner: string;
     repo: string;
     prNumber: number;
-    pullRequestTitleRegex: string | undefined;
-    branchNameRegex: string | undefined;
-    commitMessageRegex: string | undefined;
+    pullRequestTitleRegex?: string;
+    branchNameRegex?: string;
+    commitMessageRegex?: string;
 }
 
 export async function getInputs(): Promise<Inputs> {

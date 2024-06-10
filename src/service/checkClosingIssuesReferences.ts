@@ -41,9 +41,7 @@ export async function checkClosingIssuesReferences(inputs: Inputs) {
         repoOwner: inputs.owner,
         repoName: inputs.repo,
         prNumber: inputs.prNumber,
-    }).catch(_ =>
-        core.setFailed('graphql 요청 실패.')
-    ).then();
+    });
 
     const closingIssues = response.repository.pullRequest.closingIssuesReferences.nodes;
 
