@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Pull Request Validator
-        uses: azqazq195/actions.pull-request-validator@master
+        uses: azqazq195/actions.pull-request-validator@action
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 

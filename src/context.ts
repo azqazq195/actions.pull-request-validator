@@ -10,7 +10,7 @@ export interface Inputs {
 
 export async function getInputs(): Promise<Inputs> {
     return {
-        token: process.env.GITHUB_TOKEN || '',
+        token: core.getInput('token'),
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         prNumber: github.context.issue.number
