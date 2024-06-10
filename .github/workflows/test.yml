@@ -7,9 +7,6 @@ on:
       - reopened
       - synchronize
 
-env:
-  ACTIONS_STEP_DEBUG: true
-
 permissions:
   contents: write
   pull-requests: write
@@ -20,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Pull Request Validator
         uses: azqazq195/actions.pull-request-validator@master
