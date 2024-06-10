@@ -10,6 +10,11 @@ on:
 env:
   ACTIONS_STEP_DEBUG: true
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
   main:
     runs-on: ubuntu-latest
