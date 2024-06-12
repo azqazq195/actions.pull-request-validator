@@ -14,14 +14,14 @@ permissions:
   issues: read
 
 jobs:
-  main:
+  validate-pull-request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Pull Request Validator
-        uses: azqazq195/actions.pull-request-validator@v1
+        uses: azqazq195/actions.pull-request-validator@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-title-regex: "^(feat|refactor|bug|hotfix):.*$"
