@@ -10,11 +10,13 @@ export async function addAssigneesPullRequestCreator(inputs: Inputs) {
     const pr = github.context.payload.pull_request;
     if (!pr) {
         core.setFailed('Pull Request 정보를 찾을 수 없습니다.')
+        core.endGroup()
         return
     }
 
     if(!pr.user) {
         core.setFailed('Pull Request 생성자 정보를 찾을 수 없습니다.')
+        core.endGroup()
         return
     }
 
